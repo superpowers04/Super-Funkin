@@ -111,7 +111,7 @@ class CrashHandler
     sys.io.File.saveContent('$LOG_FOLDER/crash${critical ? '-critical' : ''}-${DateUtil.generateTimestamp()}.log', buildCrashReport(message));
   }
 
-  static function buildCrashReport(message:String):String
+  public static function buildCrashReport(message:String):String
   {
     var fullContents:String = '=====================\n';
     fullContents += ' Funkin Crash Report\n';

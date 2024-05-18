@@ -150,7 +150,7 @@ class PolymodHandler
 
         // Parse hxc files and register the scripted classes in them.
         useScriptedClasses: true,
-        loadScriptsAsync: #if html5 true #else false #end,
+        
       });
 
     if (loadedModList == null)
@@ -286,13 +286,14 @@ class PolymodHandler
 
   static inline function buildFrameworkParams():polymod.Polymod.FrameworkParams
   {
-    return {
+	var e = {
       assetLibraryPaths: [
         'default' => 'preload', 'shared' => 'shared', 'songs' => 'songs', 'videos' => 'videos', 'tutorial' => 'tutorial', 'week1' => 'week1',
         'week2' => 'week2', 'week3' => 'week3', 'week4' => 'week4', 'week5' => 'week5', 'week6' => 'week6', 'week7' => 'week7', 'weekend1' => 'weekend1',
       ],
-      coreAssetRedirect: CORE_FOLDER,
-    }
+      coreAssetRedirect: CORE_FOLDER
+    };
+    return e;
   }
 
   /**
