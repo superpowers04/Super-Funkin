@@ -27,7 +27,7 @@ class MenuTypedList<T:MenuListItem> extends FlxTypedGroup<T>
   /**  */
   public var wrapMode:WrapMode = Both;
 
-  var byName = new Map<String, T>();
+  public var byName = new Map<String, T>();
 
   /** Set to true, internally to disable controls, without affecting vars like `enabled` */
   public var busy(default, null):Bool = false;
@@ -165,7 +165,7 @@ class MenuTypedList<T:MenuListItem> extends FlxTypedGroup<T>
     {
       busy = true;
       FunkinSound.playOnce(Paths.sound('confirmMenu'));
-      FlxFlicker.flicker(selected, 1, 0.06, true, false, function(_) {
+      FlxFlicker.flicker(selected, 0.5, 0.06, true, false, function(_) {
         busy = false;
         selected.callback();
       });

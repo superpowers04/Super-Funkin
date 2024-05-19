@@ -57,6 +57,7 @@ import funkin.ui.debug.stage.StageOffsetSubState;
 import funkin.ui.mainmenu.MainMenuState;
 import funkin.ui.MusicBeatSubState;
 import funkin.ui.options.PreferencesMenu;
+import funkin.ui.options.CharacterSelect;
 import funkin.ui.story.StoryMenuState;
 import funkin.ui.transition.LoadingState;
 import funkin.util.SerializerUtil;
@@ -1667,7 +1668,7 @@ class PlayState extends MusicBeatSubState
     //
     // BOYFRIEND
     //
-    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(currentCharacterData.player);
+    var boyfriend:BaseCharacter = CharacterDataParser.fetchCharacter(CharacterSelect.BF == "" ? currentCharacterData.player : CharacterSelect.BF);
 
     if (boyfriend != null)
     {

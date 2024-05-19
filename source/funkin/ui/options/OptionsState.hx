@@ -41,12 +41,14 @@ class OptionsState extends MusicBeatState
     var options = addPage(Options, new OptionsMenu());
     var preferences = addPage(Preferences, new PreferencesMenu());
     var controls = addPage(Controls, new ControlsMenu());
+    var characterSelect = addPage(CharacterSelect, new CharacterSelect());
 
     if (options.hasMultipleOptions())
     {
       options.onExit.add(exitToMainMenu);
       controls.onExit.add(exitControls);
       preferences.onExit.add(switchPage.bind(Options));
+      characterSelect.onExit.add(switchPage.bind(Options));
     }
     else
     {
@@ -191,6 +193,7 @@ class OptionsMenu extends Page
     add(items = new TextMenuList());
     createItem("PREFERENCES", function() switchPage(Preferences));
     createItem("CONTROLS", function() switchPage(Controls));
+    createItem("CHANGE BF", function() switchPage(CharacterSelect));
     createItem("INPUT OFFSETS", function() {
       FlxG.state.openSubState(new LatencyState());
     });
@@ -266,9 +269,11 @@ class OptionsMenu extends Page
   #end
 }
 
+
 enum PageName
 {
   Options;
+  CharacterSelect;
   Controls;
   Colors;
   Mods;

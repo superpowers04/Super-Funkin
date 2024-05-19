@@ -125,6 +125,8 @@
 	<haxelib name="flxanimate" /> <!-- Texture atlas rendering -->
 	<haxelib name="hxCodec" if="desktop" unless="hl" /> <!-- Video playback -->
 	<haxelib name="funkin.vis"/>
+	
+	<define name='message.no-color'/>
 
 
 	<haxelib name="json2object" /> <!-- JSON parsing -->

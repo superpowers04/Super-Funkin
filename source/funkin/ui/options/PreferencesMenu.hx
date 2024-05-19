@@ -78,7 +78,6 @@ class PreferencesMenu extends Page
       onChange(value);
       checkbox.currentValue = value;
     });
-
     preferenceItems.add(checkbox);
   }
 
@@ -99,6 +98,7 @@ class PreferencesMenu extends Page
 class CheckboxPreferenceItem extends FlxSprite
 {
   public var currentValue(default, set):Bool;
+  public var follower:TextMenuList;
 
   public function new(x:Float, y:Float, defaultValue:Bool = false)
   {

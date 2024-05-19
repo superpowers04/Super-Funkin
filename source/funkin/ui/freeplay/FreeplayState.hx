@@ -146,7 +146,11 @@ class FreeplayState extends MusicBeatSubState
 
 	super(FlxColor.TRANSPARENT);
   }
-
+  public override function beatHit():Bool
+  {
+  	if(dj != null) dj.bop();
+    return super.beatHit();
+  }
   override function create():Void
   {
 	super.create();
